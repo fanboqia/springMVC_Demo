@@ -6,12 +6,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
-public class HelloController implements Controller{
+
+public class HelloController1 implements Controller{
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
-		ModelAndView maView = new ModelAndView("hello.jsp");
-		maView.addObject("message", "Hello World!");
-		return maView;
+		ModelAndView modelAndView = new ModelAndView("/pages/success.jsp");
+		modelAndView.addObject("message","跳转成功！");
+		return modelAndView;
 	}
 }

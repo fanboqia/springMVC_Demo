@@ -6,7 +6,8 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">                    
-
+	
+	<!-- demo01 -->
     <!-- 配置视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
     <!-- 配置适配器 -->
@@ -15,4 +16,17 @@
     <bean name="/hello.action" class="demo01.HelloController" />
     <!-- 配置映射器 -->
     <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    
+    <!-- demo02 -->
+    <bean id = "ItemsController1" name="/queryItems.action" class="demo02.ItemsController1"/>
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	    <property name="mappings">
+	    	<props>
+	    		<prop key="/queryItems1.action">ItemsController1</prop>
+	    		<prop key="/queryItems2.action">ItemsController1</prop>
+	    	</props>
+	    </property>
+    </bean>
+	
+	<bean name="/success.action" class="demo01.HelloController1"></bean>  
 </beans>
