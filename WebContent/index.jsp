@@ -10,6 +10,6 @@
 <!-- <a href="hello.action">hello SpringMVC测试</a><br><br> -->
 <a href="${pageContext.request.contextPath}/hello.action">BeanNameUrlHandlerMapping测试</a><br/>
 <a href="${pageContext.request.contextPath}/queryItems1.action">SimpleUrlHandlerMapping测试1</a><br><br>
-<a href="${pageContext.request.contextPath}/queryItems1.action">SimpleUrlHandlerMapping测试2</a><br><br>
+<a href="${pageContext.request.contextPath}/queryItems2.action">SimpleUrlHandlerMapping测试2</a><br><br>
 </body>
 </html>

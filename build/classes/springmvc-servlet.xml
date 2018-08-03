@@ -16,17 +16,21 @@
     <bean name="/hello.action" class="demo01.HelloController" />
     <!-- 配置映射器 -->
     <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
-    
     <!-- demo02 -->
-    <bean id = "ItemsController1" name="/queryItems.action" class="demo02.ItemsController1"/>
+    <bean id = "ItemsController1" name="/queryItems1.action" class="demo02.ItemsController1"/>
+    <!-- demo02 -->
+    <!-- 另一个非注解的处理器适配器 -->
+    <bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"/>
+    <bean id = "ItemsController2" name="/queryItems2.action" class="demo02.ItemsController2"/>
+    <!-- success -->
+    <bean name="/success.action" class="demo01.HelloController1"></bean>
+    
     <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 	    <property name="mappings">
 	    	<props>
 	    		<prop key="/queryItems1.action">ItemsController1</prop>
-	    		<prop key="/queryItems2.action">ItemsController1</prop>
 	    	</props>
 	    </property>
     </bean>
 	
-	<bean name="/success.action" class="demo01.HelloController1"></bean>  
 </beans>
